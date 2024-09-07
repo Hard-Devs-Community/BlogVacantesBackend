@@ -12,7 +12,6 @@ namespace api_dotnet.Blog.Infraestructure.Context
         public InMemoryContext(DbContextOptions<InMemoryContext> options) : base(options) { }
 
         public DbSet<Post> Posts { get; set; }
-        public DbSet<Status> Statuses { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Vacant> Vacants { get; set; }
@@ -25,7 +24,7 @@ namespace api_dotnet.Blog.Infraestructure.Context
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Role)
                 .WithMany(r => r.Users)
-                .HasForeignKey(u => u.Id);
+                .HasForeignKey(u => u.RoleId);
         }
     }
 }

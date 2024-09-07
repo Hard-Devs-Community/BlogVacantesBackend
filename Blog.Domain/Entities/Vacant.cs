@@ -12,6 +12,6 @@ namespace Blog.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public VacantStatus Status { get; set; }
-        public IEnumerable<Tag> Tags { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }
