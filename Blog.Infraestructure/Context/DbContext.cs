@@ -7,6 +7,6 @@ namespace Blog.Infraestructure.Data
 {
     public class DbContext
     {
-
+        
     }
 }

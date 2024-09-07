@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api_dotnet.Blog.Domain.Enums;
 
 namespace Blog.Domain.Entities
 {
@@ -10,6 +11,7 @@ namespace Blog.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Tag Tag { get; set; }
+        public VacantStatus Status { get; set; }
+        public IEnumerable<Tag> Tags { get; set; }
     }
 }
