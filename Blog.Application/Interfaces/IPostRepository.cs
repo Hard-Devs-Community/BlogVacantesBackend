@@ -10,10 +10,12 @@ namespace api_dotnet.Blog.Application.Interfaces;
 public interface IPostRepository
 {
     Task<IList<Post>> GetAllAsync();
-    Task<Post> GetByIdAsync();
-    Task<Post> AddAsync(Post post);
-    Task<Post> UpdateAsync(int id, Post post);
-    Task<Post> UpdateStatusAsync(int id, PostStatus status);
-    Task<Post> DeleteAsync(int id);
+    Task<Post?> GetByIdAsync(int id);
+    Task<Post?> GetByTitleAsync(string title);
+    Task<Post?> AddAsync(Post postModel);
+    Task<Post?> UpdateAsync(int id, Post postModel);
+    Task<Post?> UpdateStatusAsync(int id, PostStatus status);
+    Task<bool> DeleteAsync(int id);
     Task<bool> ExistsAsync(int id);
+    Task<bool> ExistsByTitleAsync(string title);
 }

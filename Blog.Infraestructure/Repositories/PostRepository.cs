@@ -4,44 +4,96 @@ using System.Linq;
 using System.Threading.Tasks;
 using api_dotnet.Blog.Application.Interfaces;
 using api_dotnet.Blog.Domain.Enums;
+using api_dotnet.Blog.Infraestructure.Context;
 using Blog.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace api_dotnet.Blog.Infraestructure.Repositories;
 
 public class PostRepository : IPostRepository
 {
-    public Task<Post> AddAsync(Post post)
+    private readonly InMemoryContext _context;
+
+    public PostRepository(InMemoryContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+    public async Task<Post?> AddAsync(Post postModel)
+    {
+        await _context.Posts.AddAsync(postModel);
+        await _context.SaveChangesAsync();
+
+        var post = await _context.Posts.FirstOrDefaultAsync(post => post.Title == postModel.Title);
+
+        return post;
     }
 
-    public Task<Post> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var post = await GetByIdAsync(id);
+        if (post == null)
+            return false;
+
+        _context.Posts.Remove(post);
+        await _context.SaveChangesAsync();
+
+        return true;
     }
 
-    public Task<bool> ExistsAsync(int id)
+    public async Task<bool> ExistsAsync(int id)
     {
-        throw new NotImplementedException();
+        var post = await _context.Posts.FindAsync(id);
+        return post != null;
     }
 
-    public Task<IList<Post>> GetAllAsync()
+    public async Task<bool> ExistsByTitleAsync(string title)
     {
-        throw new NotImplementedException();
+        var post = await _context.Posts.FirstOrDefaultAsync(p => p.Title == title);
+        return post != null;
     }
 
-    public Task<Post> GetByIdAsync()
+    public async Task<IList<Post>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Posts.ToListAsync();
     }
 
-    public Task<Post> UpdateAsync(int id, Post post)
+    public async Task<Post?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Posts.FindAsync(id);
     }
 
-    public Task<Post> UpdateStatusAsync(int id, PostStatus status)
+    public async Task<Post?> GetByTitleAsync(string title)
     {
-        throw new NotImplementedException();
+        return await _context.Posts.FirstOrDefaultAsync(p => p.Title == title);
+    }
+
+    public async Task<Post?> UpdateAsync(int id, Post postModel)
+    {
+        var post = await _context.Posts.FindAsync(id);
+
+        if (post == null)
+            return null;
+
+        post.Title = postModel.Title;
+        post.Description = postModel.Description;
+        post.Name = postModel.Name;
+        post.Email = postModel.Email;
+
+        await _context.SaveChangesAsync();
+
+        return post;
+    }
+
+    public async Task<Post?> UpdateStatusAsync(int id, PostStatus status)
+    {
+        var post = await _context.Posts.FindAsync(id);
+
+        if (post == null)
+            return null;
+
+        post.Status = status;
+        await _context.SaveChangesAsync();
+
+        return post;
     }
 }
