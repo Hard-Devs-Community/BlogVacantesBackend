@@ -10,13 +10,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api_dotnet.Blog.Infraestructure.Repositories;
 
-public class PostRepository : IPostRepository
+public class PostRepository : Repository, IPostRepository
 {
-    private readonly InMemoryContext _context;
-
-    public PostRepository(InMemoryContext context)
+    public PostRepository(InMemoryContext context) : base(context)
     {
-        _context = context;
     }
     public async Task<Post?> AddAsync(Post postModel)
     {
