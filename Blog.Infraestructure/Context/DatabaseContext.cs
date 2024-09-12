@@ -12,6 +12,7 @@ namespace Blog.Infraestructure.Data
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Status> Statuses { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Vacant> Vacants { get; set; }
@@ -24,7 +25,20 @@ namespace Blog.Infraestructure.Data
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Role)
                 .WithMany(r => r.Users)
-                .HasForeignKey(u => u.RoleId);
+                .HasForeignKey(u => u.RoleId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Vacant>()
+                .HasMany(v => v.Tags)
+                .WithOne(t => t.Vacant)
+                .HasForeignKey(t => t.VacantId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Post>()
+                .HasOne(p => p.Status)
+                .WithMany(s => s.Posts)
+                .HasForeignKey(p => p.StatusId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
