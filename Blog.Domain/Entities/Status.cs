@@ -7,8 +7,8 @@ namespace api_dotnet.Blog.Domain.Entities
 {
     public class Status
     {
-        int Id { get; set; }
-        string Name { get; set; }
-        string Description { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

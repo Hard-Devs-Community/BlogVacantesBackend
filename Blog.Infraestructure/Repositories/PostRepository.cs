@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api_dotnet.Blog.Application.Interfaces;
+using api_dotnet.Blog.Domain.Entities;
 using api_dotnet.Blog.Domain.Enums;
 using api_dotnet.Blog.Infraestructure.Context;
 using Blog.Domain.Entities;
