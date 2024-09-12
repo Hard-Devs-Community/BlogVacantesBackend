@@ -14,7 +14,7 @@ public interface IPostRepository
     Task<Post?> GetByTitleAsync(string title);
     Task<Post?> AddAsync(Post postModel);
     Task<Post?> UpdateAsync(int id, Post postModel);
-    Task<Post?> UpdateStatusAsync(int id, PostStatus status);
+    Task<Post?> UpdateStatusAsync(int id, Status status);
     Task<bool> DeleteAsync(int id);
     Task<bool> ExistsAsync(int id);
     Task<bool> ExistsByTitleAsync(string title);

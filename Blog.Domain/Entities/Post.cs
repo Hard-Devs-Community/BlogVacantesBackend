@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using api_dotnet.Blog.Domain.Entities;
 using api_dotnet.Blog.Domain.Enums;
 
 namespace Blog.Domain.Entities
@@ -16,6 +17,7 @@ namespace Blog.Domain.Entities
         public string Email { get; set; }
         public DateTime PublishDate { get; set; }
         public string Image { get; set; }
-        public PostStatus Status { get; set; }
+        public int StatusId { get; set; }
+        public Status Status { get; set; }
     }
 }

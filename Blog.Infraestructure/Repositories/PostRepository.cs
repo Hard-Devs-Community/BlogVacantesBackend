@@ -81,13 +81,14 @@ public class PostRepository : Repository, IPostRepository
         return post;
     }
 
-    public async Task<Post?> UpdateStatusAsync(int id, PostStatus status)
+    public async Task<Post?> UpdateStatusAsync(int id, Status status)
     {
         var post = await _context.Posts.FindAsync(id);
 
         if (post == null)
             return null;
 
+        post.StatusId = status.Id;
         post.Status = status;
         await _context.SaveChangesAsync();
 
