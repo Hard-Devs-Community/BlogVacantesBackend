@@ -11,7 +11,6 @@ namespace Blog.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public VacantStatus Status { get; set; }
-        public int TagId { get; set; }
-        public Tag Tag { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }
