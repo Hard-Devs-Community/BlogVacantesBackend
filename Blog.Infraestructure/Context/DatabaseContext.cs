@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Blog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Blog.Infraestructure.Data
+namespace Blog.Infraestructure.Context
 {
     public class DatabaseContext : DbContext
     {

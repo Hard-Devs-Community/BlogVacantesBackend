@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Domain.Enums;
+using Blog.Domain.Enums;
 
 namespace Blog.Domain.Entities
 {

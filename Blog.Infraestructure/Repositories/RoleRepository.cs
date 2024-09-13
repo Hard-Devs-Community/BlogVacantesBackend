@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Application.Interfaces;
-using api_dotnet.Blog.Infraestructure.Context;
+using Blog.Application.Interfaces;
+using Blog.Infraestructure.Context;
 using Blog.Domain.Entities;
 
-namespace api_dotnet.Blog.Infraestructure.Repositories;
+namespace Blog.Infraestructure.Repositories;
 
 public class RoleRepository : Repository, IRoleRepository
 {
-    public RoleRepository(InMemoryContext context) : base(context)
+    public RoleRepository(DatabaseContext context) : base(context)
     {
     }
     public Task<Role> AddAsync(Role role)

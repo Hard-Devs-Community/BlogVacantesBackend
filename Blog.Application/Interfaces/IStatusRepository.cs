@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Domain.Entities;
+using Blog.Domain.Entities;
 
-namespace api_dotnet.Blog.Application.Interfaces
+namespace Blog.Application.Interfaces
 {
     public interface IStatusRepository
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Blog.Domain.Entities;
 
-namespace api_dotnet.Blog.Application.Interfaces;
+namespace Blog.Application.Interfaces;
 
 public interface ITagRepository
 {

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Application.Interfaces;
-using api_dotnet.Blog.Domain.Entities;
+using Blog.Application.Interfaces;
+using Blog.Domain.Entities;
 
-namespace api_dotnet.Blog.Infraestructure.Repositories
+namespace Blog.Infraestructure.Repositories
 {
     public class StatusRepository : IStatusRepository
     {

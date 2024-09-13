@@ -2,18 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Application.Interfaces;
-using api_dotnet.Blog.Domain.Entities;
-using api_dotnet.Blog.Domain.Enums;
-using api_dotnet.Blog.Infraestructure.Context;
+using Blog.Application.Interfaces;
+using Blog.Domain.Enums;
+using Blog.Infraestructure.Context;
 using Blog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace api_dotnet.Blog.Infraestructure.Repositories;
+namespace Blog.Infraestructure.Repositories;
 
 public class PostRepository : Repository, IPostRepository
 {
-    public PostRepository(InMemoryContext context) : base(context)
+    public PostRepository(DatabaseContext context) : base(context)
     {
     }
     public async Task<Post?> AddAsync(Post postModel)

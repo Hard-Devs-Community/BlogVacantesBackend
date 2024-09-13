@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Infraestructure.Context;
+using Blog.Infraestructure.Context;
 
-namespace api_dotnet.Blog.Infraestructure.Repositories
+namespace Blog.Infraestructure.Repositories
 {
     public class Repository
     {
-        protected readonly InMemoryContext _context;
+        protected readonly DatabaseContext _context;
 
-        public Repository(InMemoryContext context)
+        public Repository(DatabaseContext context)
         {
             _context = context;
         }

@@ -1,4 +1,4 @@
-namespace api_dotnet.Blog.Domain.Enums
+namespace Blog.Domain.Enums
 {
     public enum VacantStatus
     {

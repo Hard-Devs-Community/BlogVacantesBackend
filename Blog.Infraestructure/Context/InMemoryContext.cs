@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Blog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace api_dotnet.Blog.Infraestructure.Context
+namespace Blog.Infraestructure.Context
 {
     public class InMemoryContext : DbContext
     {

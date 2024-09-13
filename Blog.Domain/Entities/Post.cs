@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using api_dotnet.Blog.Domain.Entities;
-using api_dotnet.Blog.Domain.Enums;
+using Blog.Domain.Enums;
 
 namespace Blog.Domain.Entities
 {
