@@ -1,2 +1,5 @@
 # api-dotnet
-Backend hecho en ASP .NET Core para el blog de vacantes
+Backend made using ASP .NET Core
+
+### How to set up this project
+

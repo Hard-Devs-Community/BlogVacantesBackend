@@ -9,7 +9,6 @@ namespace Blog.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int VacantId { get; set; }
-        public ICollection<Vacant> Vacant { get; set; }
+        public ICollection<Vacant> Vacants { get; set; }
     }
 }

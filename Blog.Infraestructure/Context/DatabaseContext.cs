@@ -30,9 +30,8 @@ namespace Blog.Infraestructure.Context
 
             modelBuilder.Entity<Vacant>()
                 .HasMany(v => v.Tags)
-                .WithOne(t => t.Vacant)
-                .HasForeignKey(t => t.VacantId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithMany(t => t.Vacants)
+                .UsingEntity(j => j.ToTable("PostTag"));
 
             modelBuilder.Entity<Post>()
                 .HasOne(p => p.Status)
