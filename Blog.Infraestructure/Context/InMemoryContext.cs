@@ -28,10 +28,10 @@ namespace Blog.Infraestructure.Context
                 .HasForeignKey(u => u.RoleId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Vacant>()
-                .HasMany(v => v.Tags)
-                .WithOne(t => t.Vacant)
-                .HasForeignKey(t => t.VacantId)
+            modelBuilder.Entity<Tag>()
+                .HasMany(v => v.Vacants)
+                .WithOne(t => t.Tag)
+                .HasForeignKey(t => t.TagId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Post>()
