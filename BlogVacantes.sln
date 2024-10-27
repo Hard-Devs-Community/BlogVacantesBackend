@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobVacantes.Application", "BlobVacantes.Application\BlobVacantes.Application.csproj", "{54ADA411-9F2D-44BF-84BB-4EE455EA3536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogVacantes.Application", "BlogVacantes.Application\BlogVacantes.Application.csproj", "{54ADA411-9F2D-44BF-84BB-4EE455EA3536}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobVacantes.Domain", "BlobVacantes.Domain\BlobVacantes.Domain.csproj", "{088B23F7-5827-490F-89DB-A4A654834D6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogVacantes.Domain", "BlogVacantes.Domain\BlogVacantes.Domain.csproj", "{088B23F7-5827-490F-89DB-A4A654834D6D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogVacantes.Infraestructure", "BlogVacantes.Infraestructure\BlogVacantes.Infraestructure.csproj", "{13B43590-974D-4A10-9FEE-41A8850308C5}"
 EndProject
